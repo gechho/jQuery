@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Need to define the jQueery source, either local or CDN -->
+<script src="https://ajax.googleapis.com/ajax/lib/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    // All jQuery code is placed inside <script> tags
+$(document).ready(function(){
+    /* The $(document).ready event allows us to execute a function when the docment is fully loaded
+    click event that hides any paragraph text that is clicked
+    */
+    $("p").click(function(){
+    $(this).hide();
+    });
+    //bind a click event handler to the click event
+    $('div').on('click',function(event){
+        alert('Hi there!');
+    });
+    //display a message when mousing over a DOM element
+    $('p1').mouseenter(function(){
+        alert("You entered p1!")
+    });
+    // trigger an alert by the submit event when submitting a form
+    $('form').submit(function(){
+        alert("Submitted!");
+    });
+
+});
+</script>
+</head>
+<body>
+    <h2>This is a heading.</p>
+    <p> This is a paragraph.</p>
+    <p>This is a another paragraph.</p>
+    <p id="testq">This is a test paragraph.</p>
+    <br>
+    <p><a href="https://wwww.google.ca/" id="google">Google.ca</a></p>
+
+    <br>
+    <p class="intro">I live in Dallas.</p>
+    <p class="intro">I love Dallas.</p>
+    <p>My favorite food is sashimi</p>
+
+    <div class="ancestors">
+        <div style="width: 500px;">div (great-grandparent)
+            <ul>u1(grandparent)
+                <li>li (direct parent)
+                    <span>span</span>
+                </li>
+            </ul>
+        </div>
+        <div style="width: 500px;">div (grandparent)
+            <p>p (direct parent)
+                <span>span</span>
+            </p>
+        </div>
+    </div>
+
+
+    <button id="btn0">Click me to hide paragraphs</button>
+    <br>
+    <br>
+    <button id="btn1">Set Text</button>
+    <br>
+    <br>
+    <button id="btn1">Set Href</button>
+</body>
+</html>

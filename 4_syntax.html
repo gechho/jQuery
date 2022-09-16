@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Need to define the jQueery source, either local or CDN -->
+<script src="https://ajax.googleapis.com/ajax/lib/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    // All jQuery code is placed inside <script> tags
+$(document).ready(function(){
+    /* The $(document).ready event allows us to execute a function when the docment is fully loaded
+    click event that hides any paragraph text that is clicked
+    */
+  $("#hide").click(function(){
+    // clicking the hide button hides all paragraph HTML elements
+    $("p").hide;
+  });
+  $("#append").click(function(){
+    //append text to a paragraph,# selects an HTML element by id
+    $("#p1").append("<b>Appended text</b>");
+  });
+  $("#hidetwo").click(function(){
+    // hide the current element
+    $(this).hide();
+  });
+  $("#hidethree").click(function(){
+    // hide all elements from class=test
+    $(".test").hide();
+    });
+    // add a <div> tag in jQuery and append it to the HTML body
+    $('<div id="foo" class="bar" style="color:#0000FF"><h3>New Div Created by jQuery</h3></div>').appendTo('body');
+  });
+
+
+</script>
+
+</head>
+<body>
+<!-- Examples of HTML elements -->
+<p>If you click on the "Hide" button, I will disappear.</p>
+<p id="p1">Here is a sentance to be appended with some</p>
+<button id="hide" class="test">Hide</button>
+<button id="hidetwo" class="test">Hide Current</button>
+<button id="hidethree" class="test">Hide All</button>
+
+<br><br>
+<div id="append">Append</div>
+<br><br>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Need to define the jQueery source, either local or CDN -->
+<script src="https://ajax.googleapis.com/ajax/lib/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    // All jQuery code is placed inside <script> tags
+$(document).ready(function(){
+    /* The $(document).ready event allows us to execute a function when the docment is fully loaded
+    click event that hides any paragraph text that is clicked
+    */
+  $("#hide").click(function(){
+    // clicking the hide button hides the buttons with a hide effect
+    $("p").hide;
+  });
+  $("#show").click(function(){
+    // clicking the show button shows the buttons with a show effect
+    // hide and show take in a parameter in ms to delay the action
+    $("p").show(1000);
+  });
+  $("#toggle").click(function(){
+    // toggle between show and hide
+    $("p").toggle();
+  })
+  $("#flip").click(function(){
+    // slide a panel of text into view
+    $("#panel").slideToggle("slow");
+  });
+  $("#callbackbutton").click(function(){
+    $("#p0").hide("slow",function(){
+        // display message once paragraph is hidden
+        alert("The paragraph is now hidden");
+    });
+  });
+  $("#chainingbutton").click(function(){
+    // chain effects on a block of text
+    $("#p1").css("color","red").slideUp(2000).slideDown(2000);
+  });
+});
+
+</script>
+<style>
+#panel, #flip{
+    padding:5px;
+    text-align: center;
+    background-color: #e5eecc;
+    border: solid 1 px #c3cec3;
+}
+#panel {
+    padding: 50 px;
+    display: none;
+}
+</style>
+</head>
+<body>
+<p>If you click on the "Hide" button, I will disappear.</p>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+<button id="toggle">Toggle</button>
+
+<br><br><br>
+<div id="flip">Click to slide down panel</div>
+<div id="panel">jQuery is awesome!</div>
+<br><br>
+<p id="p0">This is a paragraph with little content.</p>
+<button id="callbackbutton">Callback</button>
+<br><br>
+<button id="chainingbutton"Chain Effects></button>
+</body>
+</html>

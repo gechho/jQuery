@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Need to define the jQueery source, either local or CDN -->
+<script src="https://ajax.googleapis.com/ajax/lib/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    // All jQuery code is placed inside <script> tags
+$(document).ready(function(){
+    /*    A page can not be manipulated safely until the document is "ready". jQuery detects this state of readiness for you.
+    Code included inside $(document).ready() will only run once the page DOM(Document object Model) is ready for JavaScript code to execute.
+    */
+
+    // when a user click on a button, all<p> elements will e hiddeen
+    $('#btn0').click(function(){
+        $("p").hide()
+    });
+    $("#btn1").click(function(){
+        $("#test1").text('Hello,World!');
+    });
+    $("#btn2").click(function(){
+        $("#google").attr("href","https://www.google.ca/news");
+    });
+
+    // create a filter to the highlight all .intro elements with a background of yellow color.
+    $("p").filter(".intro").css("background-color","yellow");
+    // the following example reeturns the direc t parent element of each <span> elements
+    $("span").parent().css({"color":"red","border":"2px solid red"})
+});
+</script>
+</head>
+<body>
+    <p>If you click on me, I will disappear.</p>
+    <p>Click me away!</p>
+    <p>Click me too!</p>
+    <br>
+    <form action="">
+        First Name:<input type="text" name="FirstName" value="Mickey"><br>
+        Last Name:<input type="text" name="LastName" value="Mouse"><br>
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <br>
+    <p1 id="p1">Enter this paragraph.</p1>
+</body>
+</html>
