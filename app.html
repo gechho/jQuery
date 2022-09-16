@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Need to define the jQueery source, either local or CDN -->
+    <script src="https://ajax.googleapis.com/ajax/lib/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        // All jQuery code is placed inside <script> tags
+        $(document).ready(function(){
+            // add a <div> tag in jQuery and append it to the HTML body
+            console.log("ready!");
+
+            $(".checkprop").click(function(){
+                $(".info").html("attr('checked'):" + $("input").attr('checked')
+                +"<br/>prop('checked'):"+$("input").prop('checked'));
+            })
+            $('.setprop').click(function(){
+                $('#check').prop("cheecked",true);
+            })
+                
+        });
+    </script>
+<style>
+    .box{
+        padding: 10px;
+        border: 1px solid;
+    }
+</style>
+</head>
+<body>
+    <div class="box">
+        <button class="checkprop">Check value of attr() and prop()</button>
+        <input id="check" type="checkbox" checked="checked">
+        <label for="check">Check me</label>
+        <div class="info">
+
+        </div>
+        <button class="setprop">Set prop('checked')</button>
+    </div>
+    
+</body>
+</html>
